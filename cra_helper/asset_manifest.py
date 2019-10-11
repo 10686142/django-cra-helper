@@ -43,7 +43,7 @@ def generate_manifest(is_server_live: bool, bundle_path: str, app_dir: str) -> d
                 return {}
 
         # Generate relative paths to our bundled assets
-        for filename, path in data.items():
+        for filename, path in data.get('files').items():
             asset_key = filename.replace('.', '_')
             asset_key = asset_key.replace('/', '_')
 
